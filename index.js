@@ -21,7 +21,7 @@ client.on('message', message => {
   }
 })
 
-const async getPlaylistInfo = function() {
+const getPlaylistInfo = async function() {
   const res = await fetch(`${YOUTUBE_URL}?key=${process.env.YOUTUBE_API_KEY}&part=snippet&maxResults=50&playlistId=PLw5j-P6Ze1HFKleuhYGHro6pqi-AJFCMK`)
   const data = await res.json()
   return {
