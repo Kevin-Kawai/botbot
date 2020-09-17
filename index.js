@@ -24,7 +24,7 @@ client.on('message', message => {
   if (message.content.split(' ')[0] === 'botbot') {
     init(message.content.split(' ')[1]).then((res) => {
       console.log(res)
-      client.channels.find((channel) => { return channel.name === 'music'}).send(res)
+      client.channels.cache.find((channel) => { return channel.name === 'music'}).send(res)
     })
   }
 })
