@@ -12,9 +12,8 @@ app.use('/', (req, res) => {
 
 app.listen(port, () => console.log(`listening on ${port}`))
 
-
 const init = async function() {
-  return groovyGen((await youtubeApiGetter()).data)
+  return await groovyGen((await youtubeApiGetter()).data)
 }
 
 client.on('ready', () => {
