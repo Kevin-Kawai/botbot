@@ -22,8 +22,10 @@ client.on('ready', () => {
 
 client.on('message', message => {
   if (message.content === 'ping') {
-    init()
-    message.channel.send(init())
+    init().then((res) => {
+      console.log(res)
+      message.channel.send(res)
+    })
   }
 })
 
