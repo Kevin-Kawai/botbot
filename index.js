@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000
+const fetch = require("node-fetch")
 
 const YOUTUBE_URL = 'https://www.googleapis.com/youtube/v3/playlistItems'
 
