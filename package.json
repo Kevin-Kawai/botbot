@@ -2,5 +2,8 @@
   "name": "botbot",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
 }
