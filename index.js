@@ -24,7 +24,7 @@ client.on('message', message => {
   if (message.content.split(' ')[0] === 'botbot') {
     init(message.content.split(' ')[1]).then((res) => {
       console.log(res)
-      message.channel.send(res)
+      client.channels.get('music').send(res)
     })
   }
 })
