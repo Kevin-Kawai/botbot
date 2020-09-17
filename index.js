@@ -11,7 +11,7 @@ app.use('/', (req, res) => {
 })
 
 const init = async function() {
-  console.log(groovyGen(await youtubeApiGetter()).data)
+  console.log(groovyGen((await youtubeApiGetter()).data))
 }
 
 client.on('ready', () => {
