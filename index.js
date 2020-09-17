@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000
 
+const YOUTUBE_URL = 'https://www.googleapis.com/youtube/v3/playlistItems'
+
 app.use('/', (req, res) => {
   res.sendStatus(200)
 })
@@ -14,8 +16,19 @@ client.on('ready', () => {
 
 client.on('message', message => {
   if (message.content === 'ping') {
+    console.log(getPlaylistInfo())
     message.channel.send('pong')
   }
 })
+
+const async getPlaylistInfo = function() {
+  const res = await fetch(`${YOUTUBE_URL}?key=${process.env.YOUTUBE_API_KEY}&part=snippet&maxResults=50&playlistId=PLw5j-P6Ze1HFKleuhYGHro6pqi-AJFCMK`)
+  const data = await res.json()
+  return {
+    props: {
+      data
+    }
+  }
+}
 
 client.login(process.env.BOT_TOKEN);
