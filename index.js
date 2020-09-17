@@ -12,8 +12,8 @@ app.use('/', (req, res) => {
 
 app.listen(port, () => console.log(`listening on ${port}`))
 
-const init = async function() {
-  return await groovyGen((await youtubeApiGetter()).data)
+const init = async function(urlString) {
+  return await groovyGen((await youtubeApiGetter(urlString)).data)
 }
 
 client.on('ready', () => {
@@ -21,8 +21,8 @@ client.on('ready', () => {
 })
 
 client.on('message', message => {
-  if (message.content === 'ping') {
-    init().then((res) => {
+  if (message.content.split(' ')[0] === 'botbot') {
+    init(message.content.split(' ')[1]).then((res) => {
       console.log(res)
       message.channel.send(res)
     })
