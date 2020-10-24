@@ -27,7 +27,7 @@ client.on('message', message => {
     init()
       .then((data) => {
         console.log(data)
-        client.channels.cache.find((channel) => { return channel.name === 'general'}).send(res.dat.joke)
+        client.channels.cache.find((channel) => { return channel.name === 'general'}).send(data.joke)
       })
   }
 })
