@@ -35,7 +35,7 @@ const converter = function(sentence) {
 		} else {
 			return word
 		}
-	}
+	})
 }
 
 
