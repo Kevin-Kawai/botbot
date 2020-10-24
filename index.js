@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 3000
 const youtubeApiGetter = require('./youtubeAPIGetter');
 const groovyGen = require('./groovyCommandGenerator')
-const icanhazdadjoke = require('./icanhazdadjokeGetter');
+const icanhazdadjoke = require('./icanhazdadjoke');
 
 app.use('/', (req, res) => {
   res.sendStatus(200)
