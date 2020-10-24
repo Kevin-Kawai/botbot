@@ -25,9 +25,10 @@ const convertChecker = function(sentence) {
 	}).length > 0
 }
 
-const converter = function(sentence) {
-	const senArray = sentence.split(" ")
-	return senArray.map(function(word) {
+const converter = function(message) {
+  const user = message.author.username + " "
+	const senArray = message.content.split(" ")
+	return user.concat(consenArray.map(function(word) {
 		if (word.toLowerCase() === "i") {
 			return "***WE***"
 		} else if (word.toLowerCase() === "my") {
@@ -35,7 +36,7 @@ const converter = function(sentence) {
 		} else {
 			return word
 		}
-	}).join(" ")
+	}).join(" "))
 }
 
 

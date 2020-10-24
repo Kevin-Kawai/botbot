@@ -33,7 +33,7 @@ client.on('message', message => {
       })
   }
   if (convertChecker(message.content)) {
-    client.channels.cache.find((channel) => { return channel.name === 'general'}).send(converter(message.content))
+    client.channels.cache.find((channel) => { return channel.name === 'general'}).send(converter(message))
   }
 })
 
