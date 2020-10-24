@@ -7,7 +7,7 @@ const youtubeApiGetter = require('./youtubeAPIGetter');
 const groovyGen = require('./groovyCommandGenerator')
 const icanhazdadjoke = require('./icanhazdadjoke');
 
-const { converter, convertChecker } = require('.ourChangerConverter.js');
+const { converter, convertChecker } = require('./ourChangerConverter.js');
 
 app.use('/', (req, res) => {
   res.sendStatus(200)
