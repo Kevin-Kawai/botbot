@@ -28,7 +28,7 @@ const convertChecker = function(sentence) {
 const converter = function(message) {
   const user = "@" + message.author.username + " "
 	const senArray = message.content.split(" ")
-	return user.concat(consenArray.map(function(word) {
+	return user.concat(senArray.map(function(word) {
 		if (word.toLowerCase() === "i") {
 			return "***WE***"
 		} else if (word.toLowerCase() === "my") {
