@@ -27,7 +27,7 @@ const convertChecker = function(sentence) {
 
 const converter = function(sentence) {
 	const senArray = sentence.split(" ")
-	senArray.map(function(word) {
+	return senArray.map(function(word) {
 		if (word.toLowerCase() === "i") {
 			return "***WE***"
 		} else if (word.toLowerCase() === "my") {
@@ -35,7 +35,7 @@ const converter = function(sentence) {
 		} else {
 			return word
 		}
-	})
+	}).join(" ")
 }
 
 
