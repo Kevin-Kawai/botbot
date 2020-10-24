@@ -22,7 +22,7 @@ const convertChecker = function(sentence) {
 	const senArray = sentence.split(" ")
 	return senArray.filter(function(word) {
 		return word.toLowerCase() === "i" || word.toLowerCase() === "my"
-	}.length > 0
+	}).length > 0
 }
 
 const converter = function(sentence) {
