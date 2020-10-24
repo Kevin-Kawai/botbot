@@ -7,6 +7,8 @@ const youtubeApiGetter = require('./youtubeAPIGetter');
 const groovyGen = require('./groovyCommandGenerator')
 const icanhazdadjoke = require('./icanhazdadjoke');
 
+const { converter, convertChecker } = require('.ourChangerConverter.js');
+
 app.use('/', (req, res) => {
   res.sendStatus(200)
 })
@@ -29,6 +31,9 @@ client.on('message', message => {
         console.log(data)
         client.channels.cache.find((channel) => { return channel.name === 'general'}).send(data.data.joke)
       })
+  }
+  if (convertChecker) {
+    client.channels.cache.find((channel) => { return channel.name === 'general'}).send(converter(message))
   }
 })
 
